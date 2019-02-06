@@ -1,4 +1,3 @@
-// pkg/server/server.go
 package server
 
 import (
@@ -7,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/emilyzhang/goyagi/pkg/application"
+	"github.com/emilyzhang/goyagi/pkg/binder"
 	"github.com/emilyzhang/goyagi/pkg/health"
 	"github.com/emilyzhang/goyagi/pkg/movies"
 	"github.com/emilyzhang/goyagi/pkg/signals"
@@ -19,6 +19,9 @@ func New(app application.App) *http.Server {
 	log := logger.New()
 
 	e := echo.New()
+
+	b := binder.New()
+	e.Binder = b
 
 	health.RegisterRoutes(e)
 	movies.RegisterRoutes(e, app)

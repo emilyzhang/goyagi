@@ -32,3 +32,11 @@
 [[constraint]]
   name = "github.com/robinjoseph08/go-pg-migrations"
   version = "0.1.2"
+
+[[constraint]]
+  name = "gopkg.in/go-playground/validator.v9"
+  version = "9.26.0"
+
+[[constraint]]
+  name = "gopkg.in/go-playground/mold.v2"
+  version = "2.2.0"

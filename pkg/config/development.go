@@ -1,4 +1,3 @@
-// pkg/config/development.go
 package config
 
 import (

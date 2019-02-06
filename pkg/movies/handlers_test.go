@@ -1,4 +1,3 @@
-// pkg/movies/handlers_test.go
 package movies
 
 import (
@@ -30,6 +29,20 @@ func TestListHandler(t *testing.T) {
 		require.NoError(tt, err)
 		assert.True(tt, len(response) >= 23)
 	})
+
+	t.Run("optional parameters work as expected", func(tt *testing.T) {
+		payload := []byte(`{"limit": 2}`)
+		c, rr := newContext(tt, payload)
+
+		err := h.listHandler(c)
+		assert.NoError(tt, err)
+		assert.Equal(tt, http.StatusOK, rr.Code)
+
+		var response []model.Movie
+		err = json.Unmarshal(rr.Body.Bytes(), &response)
+		require.NoError(tt, err)
+		assert.True(tt, len(response) == 2)
+	})
 }
 
 func TestRetrieveHandler(t *testing.T) {
@@ -58,6 +71,38 @@ func TestRetrieveHandler(t *testing.T) {
 
 		err := h.retrieveHandler(c)
 		assert.Contains(tt, err.Error(), "movie not found")
+	})
+}
+
+func TestCreateHandler(t *testing.T) {
+	h := newHandler(t)
+
+	t.Run("successfully creates new movie", func(tt *testing.T) {
+		payload := []byte(`{"title": "Goyagi", "release_date": "2019-01-30T00:00:00.00Z"}`)
+		c, rr := newContext(tt, payload)
+
+		err := h.createHandler(c)
+		assert.NoError(tt, err)
+		assert.Equal(tt, http.StatusOK, rr.Code)
+
+		var response model.Movie
+		err = json.Unmarshal(rr.Body.Bytes(), &response)
+		require.NoError(tt, err)
+		assert.True(tt, response.Title == "Goyagi")
+
+		// check that goyagi was added to list
+		c, rr = newContext(tt, nil)
+		c.SetParamNames("id")
+		c.SetParamValues("24")
+
+		err = h.retrieveHandler(c)
+		assert.NoError(tt, err)
+		assert.Equal(tt, http.StatusOK, rr.Code)
+
+		err = json.Unmarshal(rr.Body.Bytes(), &response)
+		require.NoError(tt, err)
+		assert.Equal(tt, response.ID, 24)
+		assert.Equal(tt, response.Title, "Goyagi")
 	})
 }
 

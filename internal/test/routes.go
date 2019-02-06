@@ -1,4 +1,3 @@
-// internal/test/routes.go
 package test
 
 import (

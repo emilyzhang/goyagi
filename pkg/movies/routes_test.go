@@ -1,4 +1,3 @@
-// pkg/movies/routes_test.go
 package movies
 
 import (

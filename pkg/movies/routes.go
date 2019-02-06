@@ -1,4 +1,3 @@
-// pkg/movies/routes.go
 package movies
 
 import (
