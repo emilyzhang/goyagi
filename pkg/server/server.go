@@ -9,6 +9,7 @@ import (
 	"github.com/emilyzhang/goyagi/pkg/binder"
 	"github.com/emilyzhang/goyagi/pkg/errors"
 	"github.com/emilyzhang/goyagi/pkg/health"
+	"github.com/emilyzhang/goyagi/pkg/metrics"
 	"github.com/emilyzhang/goyagi/pkg/movies"
 	"github.com/emilyzhang/goyagi/pkg/recovery"
 	"github.com/emilyzhang/goyagi/pkg/signals"
@@ -26,6 +27,7 @@ func New(app application.App) *http.Server {
 	e.Binder = b
 
 	e.Use(logger.Middleware())
+	e.Use(metrics.Middleware(app.Metrics))
 	e.Use(recovery.Middleware())
 
 	errors.RegisterErrorHandler(e, app)
