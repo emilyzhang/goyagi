@@ -1,4 +1,3 @@
-// pkg/application/application_test.go
 package application
 
 import (

@@ -1,4 +1,3 @@
-// scripts/coverage.sh
 #!/bin/bash
 
 THRESHOLD=85

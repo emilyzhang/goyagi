@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  digest = "1:ed4582b92b69928dec6d82f78d1ad64863b89e631217bfdc5c63b3066a053eea"
+  name = "github.com/creasty/defaults"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "edf4f6a95a3223dfff4eff2c404103e756fef68d"
+  version = "v1.3.0"
+
+[[projects]]
   digest = "1:ffe9824d294da03b391f44e1ae8281281b4afc1bdaa9588c9097785e3af10cec"
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
@@ -26,6 +34,25 @@
   pruneopts = "UT"
   revision = "750698e034bbc0f35e33e69df35cd8cc4c6b7d3d"
   version = "v7.1.7"
+
+[[projects]]
+  digest = "1:e1ff887e232b2d8f4f7c7db15a5fac7be418025afc4dda53c59c765dbb5aa6b4"
+  name = "github.com/go-playground/locales"
+  packages = [
+    ".",
+    "currency",
+  ]
+  pruneopts = "UT"
+  revision = "f63010822830b6fe52288ee52d5a1151088ce039"
+  version = "v0.12.1"
+
+[[projects]]
+  digest = "1:e022cf244bcac1b6ef933f1a2e0adcf6a6dfd7b872d8d41e4d4179bb09a87cbc"
+  name = "github.com/go-playground/universal-translator"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "b32fa301c9fe55953584134cb6853a13c87ec0a1"
+  version = "v0.16.0"
 
 [[projects]]
   digest = "1:bed9d72d596f94e65fff37f4d6c01398074a6bb1c3f3ceff963516bd01db6ff5"
@@ -61,6 +88,14 @@
   pruneopts = "UT"
   revision = "7fd9f68ece0bcb1a905fac8f1549f0083f71c51b"
   version = "v0.2.8"
+
+[[projects]]
+  digest = "1:6782ffc812e8e700e6952ede1e60487ff1fd9da489eff762985be662a7cfc431"
+  name = "github.com/leodido/go-urn"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "70078a794e8ea4b497ba7c19a78cd60f90ccf0f4"
+  version = "v1.1.0"
 
 [[projects]]
   digest = "1:be3ce294ea21244f03a9eadeeae1c4094169942fcae85e962aa9b3638b83798b"
@@ -123,6 +158,14 @@
   version = "v1.11.0"
 
 [[projects]]
+  digest = "1:1b10751ffd2aa4dc6986b0798b55cf7dff327f7f35b37724b971d832cd8a2621"
+  name = "github.com/segmentio/go-snakecase"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "ceb69a29e76325a6bc236bb53cefe28d28348373"
+  version = "v1.1.0"
+
+[[projects]]
   digest = "1:5da8ce674952566deae4dbc23d07c85caafc6cfa815b0b3e03e41979cedb8750"
   name = "github.com/stretchr/testify"
   packages = [
@@ -170,6 +213,25 @@
   revision = "aca44879d5644da7c5b8ec6a1115e9b6ea6c40d9"
 
 [[projects]]
+  digest = "1:dad6cd59e8bb8d209194efbd3850b5d054384a63061671bfc2a6b2cc0929c731"
+  name = "gopkg.in/go-playground/mold.v2"
+  packages = [
+    ".",
+    "modifiers",
+  ]
+  pruneopts = "UT"
+  revision = "6bc20ce40733e8e04c2fda4523a957dd8e198948"
+  version = "v2.2.0"
+
+[[projects]]
+  digest = "1:718abca23a6d23b21b30197dd2c2bd2ee3ba88081b12caed1edb0d6bb5ef843a"
+  name = "gopkg.in/go-playground/validator.v9"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "774d09c3863ffb2e137ebe4c39ba27648d208f80"
+  version = "v9.26.0"
+
+[[projects]]
   digest = "1:999d566ad1ae4303c456af5a155f7b42401cca4fd33552567ed9dd997b107a08"
   name = "mellium.im/sasl"
   packages = ["."]
@@ -181,13 +243,18 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/creasty/defaults",
     "github.com/go-pg/pg",
+    "github.com/go-pg/pg/orm",
     "github.com/labstack/echo",
     "github.com/lob/logger-go",
     "github.com/pkg/errors",
     "github.com/robinjoseph08/go-pg-migrations",
     "github.com/stretchr/testify/assert",
     "github.com/stretchr/testify/require",
+    "gopkg.in/go-playground/mold.v2",
+    "gopkg.in/go-playground/mold.v2/modifiers",
+    "gopkg.in/go-playground/validator.v9",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

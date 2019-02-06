@@ -1,4 +1,3 @@
-// pkg/model/movie.go
 package model
 
 import "time"
