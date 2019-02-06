@@ -2,6 +2,22 @@
 
 
 [[projects]]
+  digest = "1:bd285ec20a7450d2272631284de698f2d76e923a458fee90e99cc1db4b97708d"
+  name = "github.com/DataDog/datadog-go"
+  packages = ["statsd"]
+  pruneopts = "UT"
+  revision = "e67964b4021ad3a334e748e8811eb3cd6becbc6e"
+  version = "2.1.0"
+
+[[projects]]
+  digest = "1:fed1f537c2f1269fe475a8556c393fe466641682d73ef8fd0491cd3aa1e47bad"
+  name = "github.com/certifi/gocertifi"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "deb3ae2ef2610fde3330947281941c562861188b"
+  version = "2018.01.18"
+
+[[projects]]
   digest = "1:ed4582b92b69928dec6d82f78d1ad64863b89e631217bfdc5c63b3066a053eea"
   name = "github.com/creasty/defaults"
   packages = ["."]
@@ -16,6 +32,14 @@
   pruneopts = "UT"
   revision = "8991bc29aa16c548c550c7ff78260e27b9ab7c73"
   version = "v1.1.1"
+
+[[projects]]
+  digest = "1:d18f6f088d7d8365df47f49dfa24b6ff6701a941118ffda30c589d1bd954074b"
+  name = "github.com/getsentry/raven-go"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "f04e7487e9a6b9d9837d52743fb5f40576c56411"
+  version = "v0.2.0"
 
 [[projects]]
   digest = "1:139709b3b4eab483f24d2ef792e296502dd2a129fef6c5055aef7f9b07f87797"
@@ -243,9 +267,12 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/DataDog/datadog-go/statsd",
     "github.com/creasty/defaults",
+    "github.com/getsentry/raven-go",
     "github.com/go-pg/pg",
     "github.com/go-pg/pg/orm",
+    "github.com/gofrs/uuid",
     "github.com/labstack/echo",
     "github.com/lob/logger-go",
     "github.com/pkg/errors",
