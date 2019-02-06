@@ -28,3 +28,7 @@
 [prune]
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+  name = "github.com/robinjoseph08/go-pg-migrations"
+  version = "0.1.2"
